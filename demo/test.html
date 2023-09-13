@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Online shopping</title>
+
+
+
+</head>
+
+<body>
+    <center>
+
+        <form class="">
+            <h2 class="text-success">shopping</h2>
+            <select name="type" id="type" onchange="validateform()" style="padding: 10px; border-radius: 8px; ">
+        <option value="" selected>---- Choose Type ----</option >
+        <option id="Diaries"value="Diaries" >Diaries</option>
+        <option id="Remote_Control_Toys"value="Remote_Control_Toys">Remote Control Toys</option>
+        <option id="Artificial_Plants"value="Artificial_Plants">Artificial Plants</option>
+        <option id="pen"value="pen">pen</option>
+    </select>
+            <br>
+            <div><img id="img1" height="250px" width="250px"></div><br><br>
+            <p id="content"></p>
+            <span class="qty">
+        <button type="button" value="plus" id="plus" onclick="plus()">+</button>
+        <input type="number" value="1" id="number" min="1" max="15" onchange="incprice()">
+        <button type="button" value="minus" id="minus" onclick="minus()">-</button>
+    </span> >
+            <p>Price:-Rs.
+                <span id="price"></span>
+            </p>
+            <br>
+            <button type="button " value="Click" onclick="calculatetotal() " class="btn ">calculate Total</button>
+           
+   <div>
+                <div>
+                    <p>Price:-Rs.
+                        <span id="qntprice"></span>
+                    </p><br> Delivery Charges :- <span id="dcharge">50</span><br><br> Total Price :- <span id="totalprice"></span><br><br><br>
+                </div>
+            </div>
+
+        </form>
+    </center>
+    <script>
+    // initialize the plus miuns,and number elements
+         document.getElementById("plus").hidden = false;
+         document.getElementById("minus").hidden = false;
+         document.getElementById("number").hidden = false;
+
+        function validateform() {
+            let option = document.getElementById("type").value;
+            console.log(option);
+            if (option == "Diaries") {
+                document.getElementById("img1").src = "diary1.png"
+                document.getElementById("content").innerHTML = "Diaries"
+                document.getElementById("price").innerHTML = "399"
+
+            } else if (option == "Remote_Control_Toys") {
+                document.getElementById("img1").src = "remote1.png"
+                document.getElementById("content").innerHTML = "Remote_Control_Toys"
+                document.getElementById("price").innerHTML = "299 "
+            } else if (option == "Artificial_Plants") {
+                document.getElementById("img1").src = "artificial1.png "
+                document.getElementById("content").innerHTML = "Artificial_Plants"
+                document.getElementById("price").innerHTML = "199 "
+            } else if (option == "pen") {
+                document.getElementById("img1").src = "pen1.png"
+                document.getElementById("content").innerHTML = "pen"
+                document.getElementById("price").innerHTML = "599 "
+            }
+        }
+
+        function incprice() {
+            let qnt = parseInt(document.getElementById("number").value);
+            let price = parseInt(document.getElementById("price").innerHTML);
+            let qprice = qnt * price;
+           document.getElementById("qntprice").innerHTML = qprice;
+}
+function calculateTotal(){
+    let qnt = parseInt(document.getElementById("number").value);
+    let price = parseInt(document.getElementById("price").innerHTML);
+    let qprice = qnt * price;
+    let dcharge = 50;
+    let totalprice = qprice + dcharge;
+            document.getElementById("qntprice").innerHTML = qprice;
+            document.getElementById("dcharge").innerHTML = dcharge;
+            document.getElementById("totalprice").innerHTML = totalprice;
+
+}
+
+            
+
+      
+            
+
+        
+        
+    </script>
+</body>
+
+</html> 
+
+ </html> 

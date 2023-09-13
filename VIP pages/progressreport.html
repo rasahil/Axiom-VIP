@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart Example</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+
+    <div>
+        <!--        Bar chart-->    
+        <h2 class="text-primary text-center my-2" >
+            Technology Subtopic Progress Report
+        </h2>
+
+        <div class="overflow-x scroll" style=" max-width: 100%; overflow-x: scroll;" >
+            <!-- Add a canvas element where the chart will be rendered -->
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div>
+            <h2 class="text-primary text-center my-2">
+                Structure Oriented Programming Using C Topics
+            </h2>
+            <h4 class="text-primary text-center my-2">
+                <img src="./images/Rectangle 299.png" style="width: 2rem;" alt="">
+                Submission Hrs
+            </h4>
+        </div>
+    </div>
+    <!-- Table's  of technologys -->
+    <div style="max-width: 100%; overflow-x: scroll;">
+        <!--        Line graph-->
+        <!--        <h2 class="text-primary text-center mt-5 mb-2 ">Technology Topic Progress Report</h2>-->
+
+        <table class="table table-bordered border border-black table-hover">
+            <thead  >
+              <tr >
+                <th  scope="col" class="bg-primary text-white fw-bold">Sr.  no.</th>
+                <th scope="col"  class="bg-primary text-white fw-bold">Technology</th>
+                <th scope="col" class="bg-primary text-white fw-bold">Topic</th>
+                <th scope="col"class="bg-primary text-white fw-bold">Sub-Topic</th>
+                <th scope="col"class="bg-primary text-white fw-bold">Start-Date</th>
+                <th scope="col"class="bg-primary text-white fw-bold">End-Date</th>
+                <th scope="col"class="bg-primary text-white fw-bold">Submit-Date</th>
+                <th scope="col"class="bg-primary text-white fw-bold">Status</th>
+              </tr>
+            </thead>
+            <tbody class="bg-black">
+              <tr>
+                <th scope="row">1</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Basic</td>
+                <td>basic programming and practice</td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Data Types in C</td>
+                <td>Data Type</td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Operators in C</td>
+                <td>Operators</td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Conditional & Branching in C</td>
+                <td>Conditional & Branching</td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Looping in C</td>
+                <td>Looping </td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Looping in C</td>
+                <td>Looping Techniques </td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Looping in C</td>
+                <td>Nested Looping </td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Storage class in C</td>
+                <td>Storage class </td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Function in C</td>
+                <td>Function</td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+              <tr>
+                <th scope="row">10.</th>
+                <td>Structure Oriented Programming Using C</td>
+                <td>Function in C</td>
+                <td>Nested Function</td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td><input type="date"><br>
+                <input type="time"></td>
+                <td class="text-success">Complete</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+    <script>
+        // Sample data for the bar chart
+        const data = {
+            labels: ['Basic ', 'Data Types', 'Operators', 'Conditional and Branching', 'Looping' , 'Looping Techniques' , 'Nested Looping' , 'Storage Classes' , 'Function' , 'Nested Function' , 'Recursion' , 'String Manipulation' , 'Array' , 'Array 1D, 2D and Multi D' , 'Array Matrix' , 'Sorting'],
+            datasets: [{
+                label: 'Session Hrs',
+                data: [12, 19, 3, 5, 2,12, 19, 3, 5, 2,12, 19, 3, 5, 2,10],
+                backgroundColor: [
+                    '#0028B4',
+                    '#2D56E9',
+                    '#3A1DE8'
+                ],
+                borderColor: [
+                    '#3A1DE8',
+                    '#3A1DE8',
+                    '#3A1DE8'
+                   
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // Create a new chart instance
+        const ctx = document.getElementById('barChart').getContext('2d');
+        const myChart = new Chart(ctx, config);
+    </script>
+</body>
+</html>

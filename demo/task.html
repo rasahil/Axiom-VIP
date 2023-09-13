@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Online shopping</title>
+</head>
+
+<body>
+    <center>
+        <form class="">
+            <h2 class="text-success">Shopping</h2>
+            <select name="type" id="type" onchange="validateForm()" style="padding: 10px; border-radius: 8px; ">
+                <option value="" selected>---- Choose Type ----</option>
+                <option id="Diaries" value="Diaries">Diaries</option>
+                <option id="Remote_Control_Toys" value="Remote_Control_Toys">Remote Control Toys</option>
+                <option id="Artificial_Plants" value="Artificial_Plants">Artificial Plants</option>
+                <option id="pen" value="pen">Pen</option>
+            </select>
+            <br>
+            <div><img id="img1" height="250px" width="250px"></div><br><br>
+            <p id="content"></p>
+            <span class="qty">
+                <button type="button" value="plus" id="plus" hidden onclick="increaseQuantity()">+</button>
+                <input type="number" value="1" id="number" min="1" max="15" onchange="calculatePrice()">
+                <button type="button" value="minus" id="minus" hidden>-</button>
+            </span>
+            <p>Price: Rs. <span id="price"></span></p>
+            <br>
+            <button type="button" value="Click" onclick="calculateTotalPrice()" class="btn">Calculate Total Price</button>
+            <div>
+                <div>
+                    <p>Price: Rs. <span id="qntprice"></span></p><br> Delivery Charges: Rs. <span id="dcharge">50</span><br><br> Total Price: Rs. <span id="totalprice"></span><br><br><br>
+                </div>
+            </div>
+        </form>
+    </center>
+    <script>
+        function validateForm() {
+            let option = document.getElementById("type").value;
+            if (option == "Diaries") {
+                document.getElementById("img1").src = "download.jpg";
+                document.getElementById("content").innerHTML = "Diaries";
+                document.getElementById("price").innerHTML = "399";
+            } else if (option == "Remote_Control_Toys") {
+                document.getElementById("img1").src = "remote1.png";
+                document.getElementById("content").innerHTML = "Remote Control Toys";
+                document.getElementById("price").innerHTML = "299";
+            } else if (option == "Artificial_Plants") {
+                document.getElementById("img1").src = "artificial1.png";
+                document.getElementById("content").innerHTML = "Artificial Plants";
+                document.getElementById("price").innerHTML = "199";
+            } else if (option == "pen") {
+                document.getElementById("img1").src = "pen1.png";
+                document.getElementById("content").innerHTML = "Pen";
+                document.getElementById("price").innerHTML = "599";
+            }
+            // Show the quantity buttons and input field
+            document.getElementById("plus").hidden = false;
+            document.getElementById("minus").hidden = false;
+            document.getElementById("number").hidden = false;
+        }
+
+        function increaseQuantity() {
+            let numberInput = document.getElementById("number");
+            numberInput.value = parseInt(numberInput.value) + 1;
+            calculatePrice();
+        }
+
+        function decreaseQuantity() {
+            let numberInput = document.getElementById("number");
+            if (parseInt(numberInput.value) > 1) {
+                numberInput.value = parseInt(numberInput.value) - 1;
+                calculatePrice();
+            }
+        }
+
+        function calculatePrice() {
+            let quantity = parseInt(document.getElementById("number").value);
+            let price = parseInt(document.getElementById("price").innerHTML);
+            let totalPrice = quantity * price;
+            document.getElementById("qntprice").innerHTML = totalPrice;
+        }
+
+        function calculateTotalPrice() {
+            let quantity = parseInt(document.getElementById("number").value);
+            let price = parseInt(document.getElementById("price").innerHTML);
+            let deliveryCharge = 50;
+            let totalPrice = (quantity * price) + deliveryCharge;
+            document.getElementById("totalprice").innerHTML = totalPrice;
+        }
+    </script>
+</body>
+
+</html>

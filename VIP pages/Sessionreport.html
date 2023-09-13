@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session report</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <div class="container-fluid">
+            <div style="max-width: 100%; overflow-x: auto;">
+    
+                <!-- Bar chart -->    
+                <h2 class="text-primary text-center my-2 display-4">
+                    Technology Subtopic Report
+                </h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <!-- Add a canvas element where the chart will be rendered -->
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+                
+              
+            </div>
+    
+            <!-- Table of technologies -->
+            <div class="row justify-content-center container-fluid mt-3 mb-5">
+                <div class="col-md-12">
+                    <div style="max-width: 100%;  overflow-x: auto; ">
+    
+                   
+                    <table class="table table-bordered border border-primary border-2 table-hover text-center ">
+                        <thead>
+                          <tr  style="color: #004080;">
+                            <th scope="col" class="text-primary fw-bold">Sr.  no.</th>
+                            <th scope="col" class="text-primary fw-bold">Technology</th>
+                            <th scope="col" class="text-primary fw-bold">Total Sub-Topic</th>
+                            <th scope="col" class="text-primary fw-bold">Completed Sub-Topic</th>
+                            <th scope="col" class="text-primary fw-bold">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody class="bg-black ">
+                           
+                                <tr>
+                                  <th class="text-primary" scope="row">1</th>
+                                  <td class="text-primary">Structure Oriented Programming Using C</td>
+                                  <td class="text-primary">20</td>
+                                  <td class="text-primary">20</td>
+                                  <td class="text-success"><button class="btn btn-outline-success active">Active</button></td>
+                                </tr>
+                                <tr>
+                                    <th class="text-primary" scope="row">2</th>
+                                    <td class="text-primary">Object Oriented Programming Using CPP</td>
+                                    <td class="text-primary">7</td>
+                                    <td class="text-primary">7</td>
+                                    <td class="text-success"><button class="btn btn-outline-success active">Active</button></td>
+                                  </tr>
+                                  <tr>
+                                    <th class="text-primary" scope="row">3</th>
+                                    <td class="text-primary">PHP</td>
+                                    <td class="text-primary">20</td>
+                                    <td class="text-primary">2</td>
+                                    <td class="text-success"><button class="btn btn-outline-success active">Active</button></td>
+                                  </tr>
+                             
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+  
+    <script>
+        // Sample data for the bar chart
+        const data = {
+            labels: ['C Language', 'C++ Language', 'PHP'],
+            datasets: [
+                {
+                    label: 'Subtopic Target',
+                    data: [12, 19, 3],
+                    backgroundColor: [
+                        '#5F43CD',
+                        '#5F43CD',
+                        '#5F43CD'
+                    ],
+                    borderColor: [
+                        '#25ABF6',
+                        '#3A1DE8',
+                        '#3A1DE8'
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Subtopic Achieve',
+                    data: [8, 15, 5],
+                    backgroundColor: [
+                        '#25ABF6',
+                        '#25ABF6',
+                        '#25ABF6'
+                    ],
+                    borderColor: [
+                        '#FFA533',
+                        '#FFA533',
+                        '#FFA533'
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        };
+    
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true
+                    },
+                    tooltips: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+    
+        // Create a new chart instance
+        const ctx = document.getElementById('barChart').getContext('2d');
+        const myChart = new Chart(ctx, config);
+    </script>
+</body>
+</html>
